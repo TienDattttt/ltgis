@@ -54,7 +54,9 @@ map.locate({
 })
     .on("locationfound", (e) => {
         // Marker cho vị trí người dùng
-        const marker = L.marker([e.latitude, e.longitude]).bindPopup(
+        const marker = L.marker([e.latitude, e.longitude], {
+            icon: funny, // Áp dụng icon funny
+        }).bindPopup(
             "You are here :)",
             { className: "description" }
         );
@@ -129,6 +131,7 @@ window.addEventListener("DOMContentLoaded", function () {
             const marker = L.marker([cord[1], cord[0]], {
                 title: display_name,
                 id: customId,
+                icon: funny, // Áp dụng icon funny
             });
             marker.addTo(map).bindPopup(display_name, {
                 className: "description",
